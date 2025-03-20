@@ -12,7 +12,7 @@ public class Account {
     DecimalFormat moneyFormat = new DecimalFormat ("'$'###,##0.00");
     
     public int setCustomerNumber(int CustomerNumber) {
-        this.customerNumber = CustomerNumber;
+        this.CustomerNumber = CustomerNumber;
         return CustomerNumber;
     }
     public int getCustomerNumber() {
@@ -60,7 +60,7 @@ public class Account {
     } else {
         System.out.println("Balance cannot be Negative" + "\n");
     }
-    }
+}
     
     public void getSavingWithdrawInput() {
         System.out.println("Saving Balance: " + moneyFormat.format(SavingBalance));
@@ -68,7 +68,7 @@ public class Account {
         double amount = input.nextDouble();
         
         if ((SavingBalance - amount) >= 0) {
-            calcSavingWithdraw("New Balance: ") + moneyFormat.format(SavingBalance);
+            calcSavingWithdraw("New Balance: " + moneyFormat.format(SavingBalance));
         } else {
             System.out.println("Balance cannot be Negative" + "\n");
         }
@@ -79,7 +79,7 @@ public class Account {
         System.out.println("Amount you want to Deposit: ");
         double amount = input.nextDouble();
         
-        if ((Savingbalance + amount) >= 0) {
+        if ((Checkingbalance + amount) >= 0) {
             calcCheckingDeposit(amount);
             System.out.println("New Balance: " + moneyFormat.format(CheckingDeposit));
         } else {
