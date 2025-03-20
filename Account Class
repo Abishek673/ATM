@@ -1,1 +1,57 @@
+package io.github.abishek673.corejava.project.atm;
 
+import java.text.DecimalFormat;
+
+public class Account {
+    private int CustomerNumber;
+    private int pinNumber;
+    private double CheckingBalance = 0;
+    private double savingBalance = 0;
+    
+    Scanner input = new Scanner(System.in);
+    DecimalFormat moneyFormat = new DecimalFormat ("'$'###,##0.00");
+    
+    public int setCustomerNumber(int CustomerNumber) {
+        this.customerNumber = CustomerNumber;
+        return CustomerNumber;
+    }
+    public int getCustomerNumber() {
+        return CustomerNumber;
+    }
+    
+    public int setPinNumber(int PinNumber) {
+        this.pinNumber = PinNumber;
+        return PinNumber;
+    }
+    public int getPinNumber() {
+        return pinNumber;
+    }
+    public double getCheckingBalance() {
+        return CheckingBalance;
+    }
+    public double getSavingBalance() {
+        return SavingBalance;
+    }
+    public double calcCheckingWithdraw(double amount) {
+        CheckingBalance = (CheckingBalance - amount);
+        return CheckingBalance;
+    }
+    public double calcSavingWithdraw(double amount) {
+        SavingBalance = (SavingBalance - amount);
+        return SavingBalance;
+    }
+    public double calcCheckingDeposit(double amount) {
+        CheckingBalance = (CheckingBalance + amount);
+        return CheckingBalance;
+    }
+    public double calcSavingDeposit(double amount) {
+        SavingBalance = (CheckingBalance + amount);
+        return savingBalance;
+    }
+    
+    public void getCheckingWithdrawInput() {
+        System.out.println("Checking Account Balance: " + moneyFormat.format(CheckingBalance));
+        System.out.println("Amount you want to Withdraw: ");
+        double amount = input.nextDoublt();
+        
+    if
